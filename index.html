@@ -33,24 +33,23 @@
                 <form class="py-4">
                     <div class="form-group">
                         <label for="formGroupExampleInput" class="font-weight-bold">Name:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+                        <input type="text" class="form-control" placeholder="Name" id="name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1" class="font-weight-bold">Email address:</label>
-                        <input type="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
+                        <input type="Email" class="form-control" aria-describedby="emailHelp" placeholder="Email Address" id="email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1" class="font-weight-bold">Password:</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" id="pass">
                     </div>
                     <div class="form-group pt-4">
-                        <button type="submit" class="btn btn-primary text-uppercase px-5 py-2">Submit</button>
+                        <button type="submit" class="btn btn-primary text-uppercase px-5 py-2" onclick="sub()">Submit</button>
                         <button type="submit" class="btn btn-primary text-uppercase px-5 py-2 ml-1">Login</button>
                     </div>
                 </form>
             </div>
             <!------ admin Login Page --------->
-
             <div class="col-12">
                 <div class="modal" tabindex="-1" role="dialog" id="myModal">
                     <div class="modal-dialog" role="document">
@@ -81,6 +80,21 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Update</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
