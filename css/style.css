@@ -26,3 +26,16 @@ html {
     background-color: #b2bec3 !important;
     border-style: none;
 }
+
+.up-btn {
+    padding: 0px 150px;
+    border-style: none;
+}
+
+#database {
+    display: none;
+}
+
+#reg_form {
+    display: block;
+}
