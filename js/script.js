@@ -25,8 +25,6 @@ function sub() {
     col3.innerHTML = '<i class="fas fa-edit" id="up"></i>';
     col4.innerHTML = '<i class="far fa-trash-alt" onclick="del(this)"></i>';
 
-    row.setAttribute("id", "row");
-    console.log(row);
 
     row.append(col, col1, col2, col3, col4);
     tbody.append(row);
@@ -52,8 +50,8 @@ function sub() {
     }
 }
 
-function del(x) {
-    var list = x.parentNode.parentElement;
+function del(z) {
+    var list = z.parentNode.parentElement;
     console.log(list);
     list.remove();
 
