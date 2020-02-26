@@ -23,7 +23,10 @@ function sub() {
     var col4 = document.createElement("td");
 
     col3.innerHTML = '<i class="fas fa-edit" id="up"></i>';
-    col4.innerHTML = '<i class="far fa-trash-alt"></i>';
+    col4.innerHTML = '<i class="far fa-trash-alt" onclick="del(this)"></i>';
+
+    row.setAttribute("id", "row");
+    console.log(row);
 
     row.append(col, col1, col2, col3, col4);
     tbody.append(row);
@@ -33,6 +36,7 @@ function sub() {
     col2.innerHTML = document.getElementById('pass').value;
 
     var x = document.getElementById("up");
+    var y = document.getElementById("del");
     var modal1 = document.getElementById("myModal1");
     var close1 = document.getElementsByClassName("close1")[0];
 
@@ -48,6 +52,13 @@ function sub() {
     }
 }
 
+function del(x) {
+    var list = x.parentNode.parentElement;
+    console.log(list);
+    list.remove();
+
+}
+
 function edit() {
     var name1 = document.getElementById('name1').value;
     var email1 = document.getElementById('email1').value;
@@ -56,10 +67,6 @@ function edit() {
     update_name.innerHTML = name1;
     update_email.innerHTML = email1;
     update_pass.innerHTML = pass1;
-    console.log(name1);
-    console.log(email1);
-    console.log(pass1);
-    console.log(update_name);
     modal1.style.display = "none";
 }
 
@@ -74,6 +81,4 @@ function admin_login() {
         document.getElementById('database').style.display = "block";
         document.getElementById('reg_form').style.display = "none";
     }
-    console.log(u_name);
-    console.log(u_pass);
 }
