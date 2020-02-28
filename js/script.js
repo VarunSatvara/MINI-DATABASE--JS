@@ -23,18 +23,18 @@ function sub() {
     var col4 = document.createElement("td");
 
     col3.innerHTML = '<i class="fas fa-edit" id="up"></i>';
-    col4.innerHTML = '<i class="far fa-trash-alt" onclick="del(this)"></i>';
+    col4.innerHTML = '<i class="far fa-trash-alt"></i>';
 
 
     row.append(col, col1, col2, col3, col4);
     tbody.append(row);
+    console.log(row);
 
     col.innerHTML = document.getElementById('name').value;
     col1.innerHTML = document.getElementById('email').value;
     col2.innerHTML = document.getElementById('pass').value;
 
     var x = document.getElementById("up");
-    var y = document.getElementById("del");
     var modal1 = document.getElementById("myModal1");
     var close1 = document.getElementsByClassName("close1")[0];
 
@@ -50,13 +50,6 @@ function sub() {
     }
 }
 
-function del(z) {
-    var list = z.parentNode.parentElement;
-    console.log(list);
-    list.remove();
-
-}
-
 function edit() {
     var name1 = document.getElementById('name1').value;
     var email1 = document.getElementById('email1').value;
@@ -67,6 +60,7 @@ function edit() {
     update_pass.innerHTML = pass1;
     modal1.style.display = "none";
 }
+
 
 function admin_login() {
     var admin_name = "admin";
@@ -79,4 +73,5 @@ function admin_login() {
         document.getElementById('database').style.display = "block";
         document.getElementById('reg_form').style.display = "none";
     }
+    myModal.style.display = "none";
 }
