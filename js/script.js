@@ -23,7 +23,7 @@ function sub() {
     var col4 = document.createElement("td");
 
     col3.innerHTML = '<i class="fas fa-edit" id="up"></i>';
-    col4.innerHTML = '<i class="far fa-trash-alt"></i>';
+    col4.innerHTML = '<i class="far fa-trash-alt" onclick="del(this)"></i>';
 
 
     row.append(col, col1, col2, col3, col4);
@@ -48,6 +48,15 @@ function sub() {
     close1.onclick = function() {
         modal1.style.display = "none";
     }
+}
+
+
+
+function del(z) {
+    var list = z.parentNode.parentElement;
+    console.log(list);
+    list.remove();
+
 }
 
 function edit() {
