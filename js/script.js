@@ -1,9 +1,8 @@
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var update_name;
-var update_email;
-var update_pass;
 var span = document.getElementsByClassName("close")[0];
+
 
 btn.onclick = function() {
     modal.style.display = "block";
@@ -22,9 +21,8 @@ function sub() {
     var col3 = document.createElement("td");
     var col4 = document.createElement("td");
 
-    col3.innerHTML = '<i class="fas fa-edit" id="up"></i>';
+    col3.innerHTML = '<i class="fas fa-edit" onclick="up(this)"></i>';
     col4.innerHTML = '<i class="far fa-trash-alt" onclick="del(this)"></i>';
-
 
     row.append(col, col1, col2, col3, col4);
     tbody.append(row);
@@ -32,44 +30,28 @@ function sub() {
 
     col.innerHTML = document.getElementById('name').value;
     col1.innerHTML = document.getElementById('email').value;
-    col2.innerHTML = document.getElementById('pass').value;
-
-    var x = document.getElementById("up");
-    var modal1 = document.getElementById("myModal1");
-    var close1 = document.getElementsByClassName("close1")[0];
-
-    x.onclick = function() {
-        modal1.style.display = "block";
-        update_name = this.parentElement.parentElement.childNodes[0];
-        update_email = this.parentElement.parentElement.childNodes[1];
-        update_pass = this.parentElement.parentElement.childNodes[2];
-    }
-
-    close1.onclick = function() {
-        modal1.style.display = "none";
-    }
+    col2.innerHTML = document.getElementById('pass').value;   
+   
 }
 
+function up(){
+    var modal1 = document.getElementById("myModal1");
+    modal1.style.display = "block";
+    var close1 = document.getElementsByClassName("close1")[0];
+    close1.onclick = function() {
+        modal1.style.display = "none";
+    }  
+}
 
-
-function del(z) {
-    var list = z.parentNode.parentElement;
+function del(index) {
+    var list = index.parentNode.parentElement;
     console.log(list);
     list.remove();
 
 }
-
-function edit() {
-    var name1 = document.getElementById('name1').value;
-    var email1 = document.getElementById('email1').value;
-    var pass1 = document.getElementById('pass1').value;
-    var modal1 = document.getElementById("myModal1");
-    update_name.innerHTML = name1;
-    update_email.innerHTML = email1;
-    update_pass.innerHTML = pass1;
-    modal1.style.display = "none";
+function update(){
+   console.log("hello");
 }
-
 
 function admin_login() {
     var admin_name = "admin";
@@ -83,4 +65,8 @@ function admin_login() {
         document.getElementById('reg_form').style.display = "none";
     }
     myModal.style.display = "none";
+}
+function logout(){
+    document.getElementById('reg_form').style.display="block";
+    document.getElementById('database').style.display = "none";
 }
